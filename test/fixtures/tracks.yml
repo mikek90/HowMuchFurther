@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  latitude_from: MyString
+  longtitude_from: MyString
+  latitude_to: MyString
+  longtitude_to: MyString
+  json_response: MyString
+  json_processed: MyString
+
+two:
+  user: two
+  latitude_from: MyString
+  longtitude_from: MyString
+  latitude_to: MyString
+  longtitude_to: MyString
+  json_response: MyString
+  json_processed: MyString

@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<p id="trackId" style="display: none;">
+  <%= @track.id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @track.user.email %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @track.title %>
+</p>
+
+<p>
+  <strong>Latitude from:</strong>
+  <%= @track.latitude_from %>
+</p>
+
+<p>
+  <strong>Longtitude from:</strong>
+  <%= @track.longtitude_from %>
+</p>
+
+<p>
+  <strong>Latitude to:</strong>
+  <%= @track.latitude_to %>
+</p>
+
+<p>
+  <strong>Longtitude to:</strong>
+  <%= @track.longtitude_to %>
+</p>
+
+<%= link_to 'Edit', edit_track_path(@track) %> |
+<%= link_to 'Back', tracks_path %>
+
+<canvas id="line-chart"></canvas>
+
+<%# <%= raw @track.json_processed %>
+
+<script>
+  $(function() {
+    $(".hmf-json").hide();
+
+    var trackId = $("p#trackId").text();
+    $.get("/tracks/getcoordinates/" + trackId).done(app.generateChart);
+  });
+</script>

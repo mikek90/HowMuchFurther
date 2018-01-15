@@ -1,0 +1,63 @@
+<%= form_with(model: track, local: true) do |form| %>
+  <% if track.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(track.errors.count, "error") %> prohibited this track from being saved:</h2>
+
+      <ul>
+      <% track.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!-- <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, id: :track_user_id %>
+  </div> -->
+
+  <div style="margin-bottom: 20px;">
+    <b>OpenRouteService link:</b> 
+    <input type="text" id="urlInput" name="urlInput">
+    <button type='button' onclick='app.parseurl()'>Parse</button>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :track_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :latitude_from %>
+    <%= form.text_field :latitude_from, id: :track_latitude_from %>
+  </div>
+
+  <div class="field">
+    <%= form.label :longtitude_from %>
+    <%= form.text_field :longtitude_from, id: :track_longtitude_from %>
+  </div>
+
+  <div class="field">
+    <%= form.label :latitude_to %>
+    <%= form.text_field :latitude_to, id: :track_latitude_to %>
+  </div>
+
+  <div class="field">
+    <%= form.label :longtitude_to %>
+    <%= form.text_field :longtitude_to, id: :track_longtitude_to %>
+  </div>
+
+  <%# <div class="field"> %>
+    <%# <%= form.label :json_response %>
+    <%# <%= form.text_field :json_response, id: :track_json_response %>
+  <%# </div> %>
+
+  <%# <div class="field"> %>
+    <%# <%= form.label :json_processed %>
+    <%# <%= form.text_field :json_processed, id: :track_json_processed %>
+  <%# </div> %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

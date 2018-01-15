@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tracks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <!-- <th>User</th> -->
+      <th>Title</th>
+      <th>Latitude from</th>
+      <th>Longtitude from</th>
+      <th>Latitude to</th>
+      <th>Longtitude to</th>
+      <!-- <th>Json response</th>
+      <th>Json processed</th> -->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tracks.each do |track| %>
+      <tr>
+        <!-- <td><%= track.user %></td> -->
+        <td><%= track.title %></td>
+        <td><%= track.latitude_from %></td>
+        <td><%= track.longtitude_from %></td>
+        <td><%= track.latitude_to %></td>
+        <td><%= track.longtitude_to %></td>
+        <!-- <td><%= track.json_response %></td>
+        <td><%= track.json_processed %></td> -->
+        <td><%= link_to 'Show', track %></td>
+        <td><%= link_to 'Edit', edit_track_path(track) %></td>
+        <td><%= link_to 'Destroy', track, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Track', new_track_path %>
